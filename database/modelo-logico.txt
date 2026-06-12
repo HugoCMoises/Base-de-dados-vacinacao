@@ -1,0 +1,45 @@
+MODELO LOGICO - SISTEMA DE VACINACAO
+
+Tabela: regiao
+- id INT PRIMARY KEY
+- nome VARCHAR(50)
+
+Tabela: escolaridade
+- id INT PRIMARY KEY
+- descricao VARCHAR(80)
+
+Tabela: paciente
+- id INT PRIMARY KEY
+- nome VARCHAR(100)
+- idade INT
+- sexo VARCHAR(20)
+- cpf VARCHAR(14) UNIQUE
+- telefone VARCHAR(20)
+- endereco VARCHAR(150)
+- cidade VARCHAR(80)
+- regiao_id INT FOREIGN KEY referencia regiao(id)
+- escolaridade_id INT FOREIGN KEY referencia escolaridade(id)
+- doente BOOLEAN
+
+Tabela: vacina
+- id INT PRIMARY KEY
+- nome VARCHAR(100)
+- fabricante VARCHAR(100)
+- tipo VARCHAR(60)
+- quantidade_doses INT
+- lote VARCHAR(30)
+- data_aplicacao DATE
+
+Tabela: aplicacao
+- id INT PRIMARY KEY
+- paciente_id INT FOREIGN KEY referencia paciente(id)
+- vacina_id INT FOREIGN KEY referencia vacina(id)
+- dose INT
+- data DATE
+- observacoes VARCHAR(255)
+
+Resumo dos relacionamentos:
+- regiao possui muitos pacientes.
+- escolaridade possui muitos pacientes.
+- paciente possui muitas aplicacoes.
+- vacina possui muitas aplicacoes.

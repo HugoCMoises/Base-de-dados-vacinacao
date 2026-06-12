@@ -1,0 +1,44 @@
+MODELO CONCEITUAL - SISTEMA DE VACINACAO
+
+Entidades principais:
+
+1. Paciente
+Representa uma pessoa cadastrada no sistema.
+Atributos: id, nome, idade, sexo, CPF, telefone, endereco, cidade e doente.
+
+2. Regiao
+Representa a regiao do pais onde o paciente mora.
+Atributos: id e nome.
+
+3. Escolaridade
+Representa o nivel de escolaridade do paciente.
+Atributos: id e descricao.
+
+4. Vacina
+Representa uma vacina disponivel para aplicacao.
+Atributos: id, nome, fabricante, tipo, quantidade de doses, lote e data de aplicacao.
+
+5. Aplicacao
+Representa o registro de uma vacina aplicada em um paciente.
+Atributos: id, dose, data e observacoes.
+
+Relacionamentos:
+
+- Uma regiao pode ter varios pacientes.
+- Um paciente pertence a uma regiao.
+
+- Uma escolaridade pode estar associada a varios pacientes.
+- Um paciente possui uma escolaridade.
+
+- Um paciente pode ter nenhuma, uma ou varias aplicacoes de vacina.
+- Cada aplicacao pertence a apenas um paciente.
+
+- Uma vacina pode aparecer em nenhuma, uma ou varias aplicacoes.
+- Cada aplicacao usa apenas uma vacina.
+
+Cardinalidades:
+
+Regiao 1:N Paciente
+Escolaridade 1:N Paciente
+Paciente 1:N Aplicacao
+Vacina 1:N Aplicacao

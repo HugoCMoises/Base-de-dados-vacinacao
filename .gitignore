@@ -1,0 +1,15 @@
+# Arquivos gerados pelo Java
+out/
+*.class
+
+# Configuracoes locais da IDE
+.idea/
+*.iml
+
+# Arquivos temporarios do sistema
+.DS_Store
+Thumbs.db
+
+# Logs e arquivos temporarios
+*.log
+*.tmp

@@ -1,0 +1,50 @@
+MODELO FISICO - MYSQL
+
+Banco de dados:
+vacinacao_db
+
+Tabelas criadas:
+
+regiao
+- id INT AUTO_INCREMENT PRIMARY KEY
+- nome VARCHAR(50) NOT NULL
+
+escolaridade
+- id INT AUTO_INCREMENT PRIMARY KEY
+- descricao VARCHAR(80) NOT NULL
+
+paciente
+- id INT AUTO_INCREMENT PRIMARY KEY
+- nome VARCHAR(100) NOT NULL
+- idade INT NOT NULL
+- sexo VARCHAR(20) NOT NULL
+- cpf VARCHAR(14) NOT NULL UNIQUE
+- telefone VARCHAR(20)
+- endereco VARCHAR(150)
+- cidade VARCHAR(80)
+- regiao_id INT NOT NULL
+- escolaridade_id INT NOT NULL
+- doente BOOLEAN NOT NULL DEFAULT FALSE
+- fk_paciente_regiao referencia regiao(id)
+- fk_paciente_escolaridade referencia escolaridade(id)
+
+vacina
+- id INT AUTO_INCREMENT PRIMARY KEY
+- nome VARCHAR(100) NOT NULL
+- fabricante VARCHAR(100) NOT NULL
+- tipo VARCHAR(60) NOT NULL
+- quantidade_doses INT NOT NULL
+- lote VARCHAR(30) NOT NULL
+- data_aplicacao DATE NOT NULL
+
+aplicacao
+- id INT AUTO_INCREMENT PRIMARY KEY
+- paciente_id INT NOT NULL
+- vacina_id INT NOT NULL
+- dose INT NOT NULL
+- data DATE NOT NULL
+- observacoes VARCHAR(255)
+- fk_aplicacao_paciente referencia paciente(id)
+- fk_aplicacao_vacina referencia vacina(id)
+
+O SQL completo esta no arquivo database/script.sql.
