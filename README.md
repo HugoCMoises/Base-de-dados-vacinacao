@@ -68,7 +68,7 @@ O banco usado e MySQL.
 
 Para criar o banco e inserir os dados de exemplo:
 
-1. Abra o MySQL Workbench, phpMyAdmin, DBeaver, PyCharm Database ou terminal do MySQL.
+1. Abra um SGBD ou cliente SQL com acesso ao servidor MySQL.
 2. Execute o arquivo:
 
 ```text
@@ -127,15 +127,6 @@ java -cp "out;lib\mysql-connector-j-8.4.0.jar" Main
 ```
 
 Se algum arquivo `.java` for alterado, compile novamente antes de executar.
-
-## Como executar pelo PyCharm
-
-1. Abra o projeto no PyCharm.
-2. Adicione o arquivo `lib/mysql-connector-j-8.4.0.jar` como biblioteca do projeto.
-3. Garanta que o MySQL esteja ligado.
-4. Execute `database/script.sql` se o banco ainda nao tiver sido criado.
-5. Abra `src/Main.java`.
-6. Clique no botao verde para executar o metodo `main`.
 
 ## Menu do sistema
 
